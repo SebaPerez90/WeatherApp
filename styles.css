@@ -1,0 +1,998 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Oswald&family=Roboto&family=Roboto+Condensed&family=Roboto+Mono&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --roboto-italic: "Roboto Condensed", sans-serif;
+  --roboto-mono: "Roboto Mono", monospace;
+  --roboto: "Roboto", sans-serif;
+  --oswald: "Oswald", sans-serif;
+  --josefin: "Josefin Sans", sans-serif;
+  --bg-dark-theme: #050505;
+  --bg-light-theme: #e4e4e4;
+}
+
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1.5;
+  background-color: var(--bg-dark-theme);
+  scroll-behavior: smooth;
+  cursor: url("/src/assets/cloud.png"), auto;
+  /* header section  */
+  /* main section */
+  /* not found setion */
+  /* taost errorInfoMessage */
+}
+html .header-container-dt,
+body .header-container-dt {
+  background-color: var(--bg-dark-theme);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /* button toggle theme and language styles section */
+}
+html .header-container-dt .header-resourse-dt,
+body .header-container-dt .header-resourse-dt {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
+  grid-column: 1;
+}
+html .header-container-dt .header-resourse-dt > :first-child,
+body .header-container-dt .header-resourse-dt > :first-child {
+  color: var(--bg-light-theme);
+  font-family: var(--roboto-mono);
+  font-weight: bold;
+}
+html .header-container-dt .header-resourse-dt .header-url-dt,
+body .header-container-dt .header-resourse-dt .header-url-dt {
+  background-color: var(--bg-light-theme);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1em 0 1em;
+  border-radius: 0.4em;
+  height: 2.5em;
+  font-family: var(--roboto-italic);
+}
+html .header-container-dt .header-resourse-dt .header-url-dt > :last-child,
+body .header-container-dt .header-resourse-dt .header-url-dt > :last-child {
+  border: none;
+  background-color: inherit;
+  margin-left: 1em;
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+}
+html .header-container-dt .header-title-container,
+body .header-container-dt .header-title-container {
+  color: var(--bg-light-theme);
+  grid-column: 3/4;
+  text-align: center;
+  min-width: max-content;
+}
+html .header-container-dt .header-title-container > :first-child,
+body .header-container-dt .header-title-container > :first-child {
+  font-family: var(--roboto);
+}
+html .header-container-dt .header-title-container > :nth-child(2),
+body .header-container-dt .header-title-container > :nth-child(2) {
+  font-family: var(--roboto-italic);
+  text-align: center;
+}
+html .header-container-dt .header-btn-container-dt,
+body .header-container-dt .header-btn-container-dt {
+  place-self: start end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 5;
+}
+html .header-container-dt .header-btn-container-dt .header-btn-dt,
+body .header-container-dt .header-btn-container-dt .header-btn-dt {
+  color: #d8f33f;
+  background-color: #516677;
+  font-size: 1em;
+  border-radius: 50%;
+  border: none;
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+  height: 1.7em;
+  line-height: 1.1em;
+}
+html .header-container-dt .header-btn-container-dt .languageBtn,
+body .header-container-dt .header-btn-container-dt .languageBtn {
+  background-color: inherit;
+  border: none;
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+  scale: 0.6;
+}
+html .main-weather-container-dt,
+body .main-weather-container-dt {
+  height: 100dvh;
+  position: relative;
+  font-weight: 400;
+  font-family: var(--roboto-mono);
+  background-color: var(--bg-dark-theme);
+  color: var(--bg-light-theme);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "form form form" "card-info card-info aside" "card-info card-info aside" "card-info card-info aside";
+  /* main feature app : find the current weather depends on text input value */
+  /* card info with the current weather data */
+  /* aside section */
+}
+html .main-weather-container-dt .grid-form-area-container-dt,
+body .main-weather-container-dt .grid-form-area-container-dt {
+  place-self: center;
+  display: flex;
+  grid-area: form;
+  margin-right: 0.4em;
+  /* this section make reference to the researched locations */
+}
+html .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt,
+body .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt {
+  display: flex;
+  height: fit-content;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-input-dt,
+body .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-input-dt {
+  padding: 0.7em 0 0.7em 1.5em;
+  text-transform: capitalize;
+  outline: none;
+  border: none;
+  border-radius: 0.5em 0 0 0.5em;
+  font-family: var(--roboto-mono);
+  font-weight: bolder;
+  color: #424d57;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-input-dt:focus,
+body .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-input-dt:focus {
+  background-color: #d8d5d5;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-input-dt::placeholder,
+body .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-input-dt::placeholder {
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-serchBtn-dt,
+body .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-serchBtn-dt {
+  border: none;
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+  border-radius: 0 0.5em 0.5em 0;
+  outline: none;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-serchBtn-dt:focus,
+body .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-serchBtn-dt:focus {
+  background-color: #516677;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-serchBtn-dt:hover,
+body .main-weather-container-dt .grid-form-area-container-dt .main-weather-form-dt .weather-serchBtn-dt:hover {
+  background-color: #516677;
+  transition: all 300ms;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .search-history-dt,
+body .main-weather-container-dt .grid-form-area-container-dt .search-history-dt {
+  display: flex;
+  position: absolute;
+  padding: 2em;
+  text-align: center;
+  text-transform: capitalize;
+  left: 0;
+  transform: translate(-20em, -5em) scale(0.5);
+  z-index: 1000;
+  transition: all 300ms;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .search-history-dt > :first-child,
+body .main-weather-container-dt .grid-form-area-container-dt .search-history-dt > :first-child {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #d8d5d5;
+  border-top: 2px solid #d8d5d5;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .search-history-dt > :nth-child(2),
+body .main-weather-container-dt .grid-form-area-container-dt .search-history-dt > :nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 2px solid #d8d5d5;
+  border-top: 2px solid #d8d5d5;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .search-history-dt > :nth-child(3),
+body .main-weather-container-dt .grid-form-area-container-dt .search-history-dt > :nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-bottom: 2px solid #d8d5d5;
+  border-top: 2px solid #d8d5d5;
+}
+html .main-weather-container-dt .grid-form-area-container-dt .search-history-dt > :last-child,
+body .main-weather-container-dt .grid-form-area-container-dt .search-history-dt > :last-child {
+  right: 0.1em;
+  top: 0.1em;
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+  position: absolute;
+}
+html .main-weather-container-dt .weather-container,
+body .main-weather-container-dt .weather-container {
+  height: 100%;
+  grid-area: card-info;
+  padding: 0 3em 0 3em;
+  /* main container aditional weather data */
+}
+html .main-weather-container-dt .weather-container .weather-main-data,
+body .main-weather-container-dt .weather-container .weather-main-data {
+  border: 4px solid rgba(228, 228, 228, 0.1450980392);
+  border-bottom: none;
+  border-radius: 0.5em 0.5em 0 0;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8235294118);
+  /* this styles are used to render the background img */
+}
+html .main-weather-container-dt .weather-container .weather-main-data .backgroundImg-container,
+body .main-weather-container-dt .weather-container .weather-main-data .backgroundImg-container {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+html .main-weather-container-dt .weather-container .weather-main-data .backgroundImg-container .backgroundImg,
+body .main-weather-container-dt .weather-container .weather-main-data .backgroundImg-container .backgroundImg {
+  border-radius: 0.5em 0.5em 0 0;
+  height: 100%;
+  width: 100%;
+}
+html .main-weather-container-dt .weather-container .weather-main-data .grid-item-2,
+body .main-weather-container-dt .weather-container .weather-main-data .grid-item-2 {
+  margin: 0.5em 0 0 0.5em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  height: fit-content;
+  border: 4px solid rgba(228, 228, 228, 0.1450980392);
+  background: linear-gradient(to right, rgba(36, 36, 36, 0.3568627451), rgba(36, 36, 36, 0.3568627451));
+  border-radius: 0.4em;
+}
+html .main-weather-container-dt .weather-container .weather-main-data .grid-item-3,
+body .main-weather-container-dt .weather-container .weather-main-data .grid-item-3 {
+  place-self: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  border-left: 4px solid rgba(228, 228, 228, 0.1450980392);
+  border: 4px solid rgba(228, 228, 228, 0.1450980392);
+  background: linear-gradient(to right, rgba(36, 36, 36, 0.3568627451), rgba(36, 36, 36, 0.3568627451));
+  border-radius: 0.4em;
+  padding: 0 1.5em 0 1.5em;
+  font-size: 0.6em;
+}
+html .main-weather-container-dt .weather-container .weather-main-data .grid-item-4,
+body .main-weather-container-dt .weather-container .weather-main-data .grid-item-4 {
+  position: relative;
+  grid-row: 2/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  place-items: center;
+  margin: 0 0 1em 0.5em;
+  border: 4px solid rgba(228, 228, 228, 0.1450980392);
+  background: linear-gradient(to right, rgba(36, 36, 36, 0.3568627451), rgba(36, 36, 36, 0.3568627451));
+  border-radius: 0.4em;
+}
+html .main-weather-container-dt .weather-container .weather-main-data .grid-item-4 > :first-child,
+body .main-weather-container-dt .weather-container .weather-main-data .grid-item-4 > :first-child {
+  grid-column: 2;
+  scale: 1.9;
+  filter: brightness(1.3);
+}
+html .main-weather-container-dt .weather-container .weather-main-data .grid-item-4 > :nth-child(2),
+body .main-weather-container-dt .weather-container .weather-main-data .grid-item-4 > :nth-child(2) {
+  grid-column: 2;
+  min-width: max-content;
+}
+html .main-weather-container-dt .weather-container .weather-main-data .grid-item-4 > :last-child,
+body .main-weather-container-dt .weather-container .weather-main-data .grid-item-4 > :last-child {
+  position: relative;
+  grid-column: 2;
+  grid-row: 2;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  font-size: 1.3em;
+  min-width: max-content;
+}
+html .main-weather-container-dt .weather-container .weather-main-data .grid-item-5,
+body .main-weather-container-dt .weather-container .weather-main-data .grid-item-5 {
+  position: relative;
+  grid-column: 2;
+  grid-row: 3;
+  text-align: center;
+  margin: 0 0 1em 0.5em;
+  border: 4px solid rgba(228, 228, 228, 0.1450980392);
+  background: linear-gradient(to right, rgba(36, 36, 36, 0.3568627451), rgba(36, 36, 36, 0.3568627451));
+  border-radius: 0.4em;
+  margin-right: 0.5em;
+}
+html .main-weather-container-dt .weather-container .weather-aditional-data,
+body .main-weather-container-dt .weather-container .weather-aditional-data {
+  border-radius: 0 0 0.5em 0.5em;
+  border: 4px solid rgba(228, 228, 228, 0.1450980392);
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(226, 144, 144, 0.4745098039);
+}
+html .main-weather-container-dt .weather-container .weather-aditional-data .aditional-data-keys,
+body .main-weather-container-dt .weather-container .weather-aditional-data .aditional-data-keys {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-left: 2em;
+}
+html .main-weather-container-dt .weather-container .weather-aditional-data .aditional-data-values,
+body .main-weather-container-dt .weather-container .weather-aditional-data .aditional-data-values {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin-left: 2em;
+}
+html .main-weather-container-dt .aside-container,
+body .main-weather-container-dt .aside-container {
+  position: relative;
+  grid-area: aside;
+  padding: 0 1em 0 1em;
+  text-shadow: 2px 2px 2px #000;
+  border-radius: 0.7em 0 0 0.7em;
+  overflow: hidden;
+}
+html .main-weather-container-dt .aside-container > ::after,
+body .main-weather-container-dt .aside-container > ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url("../src/assets/images/city.png") no-repeat center top;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+html .main-weather-container-dt .aside-container > :first-child,
+body .main-weather-container-dt .aside-container > :first-child {
+  text-align: center;
+  font-family: var(--oswald);
+  position: relative;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days,
+body .main-weather-container-dt .aside-container .aside-weather-next-days {
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  font-weight: bolder;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 {
+  position: relative;
+  z-index: 1000;
+  padding: 0.4em;
+  padding-bottom: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, minmax(min-content, max-content));
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :first-child,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :first-child {
+  grid-row: 1;
+  grid-column: 3;
+  font-size: 0.7em;
+  font-weight: bolder;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :nth-child(2),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :nth-child(2) {
+  grid-row: 4;
+  grid-column: 1;
+  font-size: 0.9em;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :nth-child(3),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :nth-child(3) {
+  grid-column: 2;
+  grid-row: 3;
+  font-size: 1.5em;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :nth-child(4),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :nth-child(4) {
+  grid-row: 4;
+  grid-column: 3;
+  font-size: 0.9em;
+  text-align: end;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :last-child,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-1 > :last-child {
+  scale: 2;
+  position: absolute;
+  z-index: 1000;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 {
+  position: relative;
+  border-bottom: 2px solid var(--bg-light-theme);
+  border-top: 2px solid var(--bg-light-theme);
+  gap: 1em;
+  padding: 0.4em;
+  z-index: 1000;
+  padding-bottom: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, minmax(min-content, max-content));
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :first-child,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :first-child {
+  grid-row: 1;
+  grid-column: 3;
+  font-size: 0.7em;
+  font-weight: bolder;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :nth-child(2),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :nth-child(2) {
+  grid-row: 4;
+  font-size: 0.9em;
+  grid-column: 1;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :nth-child(3),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :nth-child(3) {
+  grid-column: 2;
+  font-size: 1.5em;
+  grid-row: 3;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :nth-child(4),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :nth-child(4) {
+  grid-row: 4;
+  font-size: 0.9em;
+  grid-column: 3;
+  text-align: end;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :last-child,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-2 > :last-child {
+  scale: 2;
+  position: absolute;
+  z-index: 1000;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 {
+  gap: 1em;
+  padding: 0.4em;
+  position: relative;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, minmax(min-content, max-content));
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :first-child,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :first-child {
+  grid-row: 1;
+  grid-column: 3;
+  font-size: 0.7em;
+  font-weight: bolder;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :nth-child(2),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :nth-child(2) {
+  grid-row: 4;
+  font-size: 0.9em;
+  grid-column: 1;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :nth-child(3),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :nth-child(3) {
+  grid-column: 2;
+  font-size: 1.5em;
+  grid-row: 3;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :nth-child(4),
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :nth-child(4) {
+  grid-row: 4;
+  font-size: 0.9em;
+  grid-column: 3;
+  text-align: end;
+}
+html .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :last-child,
+body .main-weather-container-dt .aside-container .aside-weather-next-days .aside-grid-item-3 > :last-child {
+  position: absolute;
+  scale: 2;
+  z-index: 1000;
+}
+html .not-found-container,
+body .not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  color: var(--bg-light-theme);
+  font-family: var(--roboto);
+}
+html .not-found-container > ::after,
+body .not-found-container > ::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100dvh;
+  background: url("/src/assets/images/not-found.png") no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  opacity: 0.6;
+}
+html .not-found-container .not-found-content,
+body .not-found-container .not-found-content {
+  border: 4px solid rgba(133, 132, 132, 0.5058823529);
+  border-radius: 0.6em;
+  padding: 0 15em;
+  margin: auto;
+  color: var(--bg-light-theme);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7254901961);
+  width: max-content;
+  background: linear-gradient(to top, #0c0c0c, #f8bf03);
+}
+html .not-found-container .not-found-content > :first-child,
+body .not-found-container .not-found-content > :first-child {
+  z-index: 10000;
+  position: relative;
+  bottom: -2em;
+  font-size: 3em;
+  font-family: var(--roboto-italic);
+  font-weight: 900;
+}
+html .not-found-container .not-found-content > :first-child::after,
+body .not-found-container .not-found-content > :first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1.4em;
+  height: 0.15em;
+  background-color: var(--bg-light-theme);
+  z-index: 100000;
+  transform: translate(1.1em, 1.4em) rotate(130deg);
+}
+html .not-found-container .not-found-content > :nth-child(2),
+body .not-found-container .not-found-content > :nth-child(2) {
+  font-size: 6em;
+  position: relative;
+  z-index: 1000;
+}
+html .not-found-container .not-found-content > :nth-child(3),
+body .not-found-container .not-found-content > :nth-child(3) {
+  position: relative;
+  z-index: 10000;
+}
+html .not-found-container .not-found-content .not-found-span,
+body .not-found-container .not-found-content .not-found-span {
+  position: relative;
+  border: 5px solid var(--bg-light-theme);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7254901961);
+  border-radius: 50%;
+  color: #ff0000;
+  font-size: 0.6em;
+  top: -0.3em;
+}
+html .not-found-container .not-found-content .btn-message-container,
+body .not-found-container .not-found-content .btn-message-container {
+  bottom: 3em;
+}
+html .not-found-container .not-found-content .btn-message-container > :first-child,
+body .not-found-container .not-found-content .btn-message-container > :first-child {
+  font-family: var(--roboto-italic);
+  font-size: 1.2em;
+}
+html .not-found-container .not-found-content .btn-message-container .not-found-redirect-btn,
+body .not-found-container .not-found-content .btn-message-container .not-found-redirect-btn {
+  position: relative;
+  cursor: pointer;
+  background-color: #000000;
+  color: var(--bg-light-theme);
+  z-index: 1000;
+  padding: 1em;
+  border-radius: 0.4em;
+  border: 1px solid var(--bg-light-theme);
+  font-weight: 700;
+  transition: all 300ms;
+}
+html .not-found-container .not-found-content .btn-message-container .not-found-redirect-btn:hover,
+body .not-found-container .not-found-content .btn-message-container .not-found-redirect-btn:hover {
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+  background: #424d57;
+  border: 1px solid #000000;
+  color: #000000;
+}
+html .errorInfoMessage,
+body .errorInfoMessage {
+  color: var(--bg-light-theme);
+  font-family: var(--oswald);
+  border-radius: 0.4em;
+  position: absolute;
+  top: -0.7em;
+  text-align: center;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7254901961);
+  z-index: 1000;
+  padding: 0.7em 4em;
+  font-size: 1.5em;
+  background-color: #b81818;
+  border: 2px solid var(--bg-light-theme);
+}
+html .footer-container-dt,
+body .footer-container-dt {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(7, 4.5em);
+  /* frecuently asked question section */
+  /* README section */
+  /* ASIDE section */
+}
+html .footer-container-dt .faq-section-container-dt,
+body .footer-container-dt .faq-section-container-dt {
+  grid-column: 1/span 4;
+  grid-row: 1/span 7;
+  padding: 0 1.5em 0 1.5em;
+  background-color: #3b3b3b;
+  margin: 0.5em 0 0.5em 0.5em;
+  border-radius: 0.5em;
+  box-shadow: 4px 4px 4px #131313;
+}
+html .footer-container-dt .faq-section-container-dt > :first-child,
+body .footer-container-dt .faq-section-container-dt > :first-child {
+  text-align: center;
+  text-transform: uppercase;
+  color: #388cd5;
+  text-shadow: 2px 2px 1px rgba(19, 19, 19, 0.337254902);
+}
+html .footer-container-dt .faq-section-container-dt > :last-child,
+body .footer-container-dt .faq-section-container-dt > :last-child {
+  display: flex;
+  flex-direction: column;
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt {
+  border-bottom: 2px solid #388cd5;
+  margin-top: 0.5em;
+  /* this container wrap all question and expand/collapse icon */
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .first-container,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .first-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--roboto-italic);
+  gap: 1em;
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .first-container > :first-child,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .first-container > :first-child {
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .first-container > :last-child,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .first-container > :last-child {
+  font-size: 1.4em;
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .faq-answer-dt,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .faq-answer-dt {
+  display: none;
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content {
+  border-left: 2px solid rgba(255, 0, 0, 0.5137254902);
+  position: absolute;
+  background-color: #2d2d2d;
+  padding-right: 1em;
+  border-radius: 0 0.4em 0.4em 0;
+  width: 45%;
+  z-index: 100;
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content > :first-child,
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content > :last-child,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content > :first-child,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content > :last-child {
+  margin-left: 1em;
+  color: #8d9de5;
+  font-size: 0.85em;
+  font-family: var(--josefin);
+  text-wrap: balance;
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content > :nth-child(2),
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content > :nth-child(2) {
+  scale: 0.7;
+  border: 1px solid rgba(255, 255, 255, 0.3843137255);
+  border-radius: 0.4em;
+}
+html .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content .source-link,
+body .footer-container-dt .faq-section-container-dt .faq-question-dt .expand-content .source-link {
+  text-wrap: balance;
+  color: var(--bg-light-theme);
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+}
+html .footer-container-dt .readme-section-container-dt,
+body .footer-container-dt .readme-section-container-dt {
+  grid-column: 5/span 2;
+  grid-row: 1/span 6;
+  padding: 0 1.5em 0 1.5em;
+  margin: 0.5em;
+}
+html .footer-container-dt .readme-section-container-dt .readme-card-container-dt,
+body .footer-container-dt .readme-section-container-dt .readme-card-container-dt {
+  background-color: #3b3b3b;
+  border-radius: 0.5em;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 4px 4px 4px #131313;
+}
+html .footer-container-dt .readme-section-container-dt .readme-card-container-dt > :first-child,
+body .footer-container-dt .readme-section-container-dt .readme-card-container-dt > :first-child {
+  color: #388cd5;
+  text-shadow: 2px 2px 1px rgba(19, 19, 19, 0.337254902);
+}
+html .footer-container-dt .readme-section-container-dt .readme-card-container-dt > :nth-child(2),
+html .footer-container-dt .readme-section-container-dt .readme-card-container-dt > :nth-child(3),
+body .footer-container-dt .readme-section-container-dt .readme-card-container-dt > :nth-child(2),
+body .footer-container-dt .readme-section-container-dt .readme-card-container-dt > :nth-child(3) {
+  padding: 0 0.7em 0 0.7em;
+  text-wrap: balance;
+  line-height: 1.7em;
+  font-size: 0.9em;
+  font-family: var(--roboto-italic);
+}
+html .footer-container-dt .readme-section-container-dt .readme-card-container-dt > :last-child,
+body .footer-container-dt .readme-section-container-dt .readme-card-container-dt > :last-child {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  font-family: var(--josefin);
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+}
+html .footer-container-dt .footer-aside-container-dt,
+body .footer-container-dt .footer-aside-container-dt {
+  grid-column: 7/span 2;
+  grid-row: 1/7;
+  overflow: hidden;
+  background-color: #3b3b3b;
+  margin: 0.5em;
+  border-radius: 0.5em;
+  box-shadow: 4px 4px 4px #131313;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+html .footer-container-dt .footer-aside-container-dt .title-aside-dt > :first-child,
+body .footer-container-dt .footer-aside-container-dt .title-aside-dt > :first-child {
+  font-weight: 700;
+  text-align: center;
+  font-family: var(--roboto-mono);
+  color: #388cd5;
+  text-shadow: 2px 2px 1px rgba(19, 19, 19, 0.337254902);
+}
+html .footer-container-dt .footer-aside-container-dt .title-aside-dt > :last-child,
+body .footer-container-dt .footer-aside-container-dt .title-aside-dt > :last-child {
+  scale: 0.3;
+  margin: auto;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt {
+  list-style: none;
+  display: flex;
+  align-self: stretch;
+  justify-content: space-around;
+  position: relative;
+  right: 2em;
+  bottom: 2em;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt .list-item-dt,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt .list-item-dt {
+  position: absolute;
+  color: var(--bg-light-theme);
+  font-size: 1.2em;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt .list-item-dt > :hover,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt .list-item-dt > :hover {
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+  transform: translate(-1em, -1em);
+  padding: 1.4em;
+  scale: 1.5;
+  transition: all 500ms;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt .linkedin,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt .linkedin {
+  line-height: 1em;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt .linkedin > :hover,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt .linkedin > :hover {
+  animation: shiningLinkedin 700ms alternate;
+  color: #3d8aff;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt .github,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt .github {
+  line-height: 1em;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt .github > :hover,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt .github > :hover {
+  animation: shiningGitHub 700ms alternate;
+  color: #7e7d7d;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt .email,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt .email {
+  line-height: 1em;
+}
+html .footer-container-dt .footer-aside-container-dt .footer-list-dt .email > :hover,
+body .footer-container-dt .footer-aside-container-dt .footer-list-dt .email > :hover {
+  animation: shiningEmail 700ms alternate;
+  color: #c97878;
+}
+html .footer-container-dt .footer-aside-container-dt .btns-aside-dt,
+body .footer-container-dt .footer-aside-container-dt .btns-aside-dt {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+html .footer-container-dt .footer-aside-container-dt .btns-aside-dt > :hover,
+body .footer-container-dt .footer-aside-container-dt .btns-aside-dt > :hover {
+  background-color: #ff0000;
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+  transition: all 500ms;
+}
+html .footer-container-dt .footer-aside-container-dt .btns-aside-dt > :first-child,
+html .footer-container-dt .footer-aside-container-dt .btns-aside-dt > :last-child,
+body .footer-container-dt .footer-aside-container-dt .btns-aside-dt > :first-child,
+body .footer-container-dt .footer-aside-container-dt .btns-aside-dt > :last-child {
+  padding: 0.5em;
+  border-radius: 0.5em;
+  font-family: var(--josefin);
+}
+html .footer-container-dt .developed-dt,
+body .footer-container-dt .developed-dt {
+  grid-row: 7;
+  grid-column: 5/span 3;
+  display: flex;
+  align-items: end;
+}
+html .footer-container-dt .developed-dt > :first-child,
+body .footer-container-dt .developed-dt > :first-child {
+  text-align: center;
+  position: relative;
+  left: 2em;
+  /* top: 1em; */
+  font-size: 0.8em;
+  font-family: var(--josefin);
+  min-width: max-content;
+}
+html .footer-container-dt .developed-dt > :last-child,
+body .footer-container-dt .developed-dt > :last-child {
+  position: fixed;
+  bottom: 0.2em;
+  right: 0.7em;
+  font-size: 1.5em;
+}
+html .footer-container-dt .developed-dt > :last-child :hover,
+body .footer-container-dt .developed-dt > :last-child :hover {
+  cursor: url("/src/assets/cloud-hover.png"), auto;
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@keyframes toggleExpand {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+@keyframes toggleCollapse {
+  0% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@keyframes shiningLinkedin {
+  0% {
+    border-bottom: 1px solid #004af7;
+    box-shadow: inset 1px 2px 30px 6px #004af7, 1px 2px 30px 6px #004af7, 1px 2px 30px 6px #004af7;
+    border-radius: 50%;
+  }
+  25% {
+    border-left: 2px solid #004af7;
+    border-radius: 50%;
+  }
+  50% {
+    border-top: 3px solid #004af7;
+    border-radius: 50%;
+  }
+  75% {
+    border-right: 1px solid #004af7;
+    border-radius: 50%;
+  }
+  100% {
+    border-bottom: none;
+    border-radius: 50%;
+  }
+}
+@keyframes shiningGitHub {
+  0% {
+    border-bottom: 1px solid #7e7d7d;
+    border-radius: 50%;
+    box-shadow: inset 1px 2px 10px 3px #7e7d7d, 1px 2px 10px 3px #7e7d7d, 1px 2px 10px 3px #7e7d7d;
+  }
+  25% {
+    border-left: 2px solid #7e7d7d;
+    border-radius: 50%;
+  }
+  50% {
+    border-top: 3px solid #7e7d7d;
+    border-radius: 50%;
+  }
+  75% {
+    border-right: 1px solid #7e7d7d;
+    border-radius: 50%;
+  }
+  100% {
+    border-bottom: none;
+    border-radius: 50%;
+  }
+}
+@keyframes shiningEmail {
+  0% {
+    border-bottom: 1px solid #ff0000;
+    border-radius: 50%;
+    box-shadow: inset 1px 2px 10px 3px #ff0000, 1px 2px 10px 3px #ff0000, 1px 2px 10px 3px #ff0000;
+  }
+  25% {
+    border-left: 2px solid #ff0000;
+    border-radius: 50%;
+  }
+  50% {
+    border-top: 3px solid #ff0000;
+    border-radius: 50%;
+  }
+  75% {
+    border-right: 1px solid #ff0000;
+    border-radius: 50%;
+  }
+  100% {
+    border-bottom: none;
+    border-radius: 50%;
+  }
+}
+#btn:hover {
+  cursor: pointer;
+  animation: efect 200ms linear 1 alternate-reverse forwards;
+}
+
+@keyframes efect1 {
+  to {
+    transform: translate(-3em);
+  }
+}
+@keyframes efect2 {
+  to {
+    transform: translate(3em);
+  }
+}
+@keyframes rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rise {
+  50% {
+    transform: translateY(-3.5em);
+  }
+  85% {
+    transform: translateY(-2em);
+  }
+  100% {
+    transform: translateY(-3em);
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
