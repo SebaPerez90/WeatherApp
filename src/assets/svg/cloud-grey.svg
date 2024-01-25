@@ -1,0 +1,26 @@
+<svg 
+height="400"
+width="400"
+version="1.1" 
+xmlns="http://www.w3.org/2000/svg"
+>
+    <circle cx="100" cy="110" r="35" fill="#7d7d7d" />
+    <circle cx="160" cy="80" r="55" fill="#7d7d7d" />
+    <circle cx="220" cy="90" r="40" fill="#7d7d7d" />
+    <circle cx="260" cy="110" r="30" fill="#7d7d7d" />
+    <circle cx="210" cy="100" r="51" fill="#7d7d7d" />
+    <circle cx="146" cy="100" r="48" fill="#7d7d7d" />
+
+    <circle cx="35" cy="48" r="16" fill="#7d7d7d" />
+    <circle cx="16" cy="60" r="12" fill="#7d7d7d" />
+    <circle cx="49" cy="60" r="12" fill="#7d7d7d" />
+    <circle cx="32" cy="60" r="12" fill="#7d7d7d" />
+
+    <circle cx="282" cy="20" r="13" fill="#7d7d7d" />
+    <circle cx="270" cy="25" r="10" fill="#7d7d7d" />
+    <circle cx="295" cy="20" r="16" fill="#7d7d7d" />
+    <circle cx="309" cy="28" r="11" fill="#7d7d7d" />
+    <circle cx="285" cy="25" r="14" fill="#7d7d7d" />
+    stroke="#6ab5ef" 
+    stroke-width="25"/>
+</svg>
