@@ -9,6 +9,7 @@ import { Toaster } from 'react-hot-toast';
 import { Route, Switch, Router } from 'wouter';
 
 export default function App() {
+  
   return (
       <Router base='/WeatherApp'>
         <Switch>

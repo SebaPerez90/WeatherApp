@@ -100,9 +100,6 @@ const Contact = () => {
         }, 2000);
       } else {
         languageEng ? toast.error('Something goes wrong!') : toast.error('Algo salió mal!');
-        // setTimeout(() => {
-        //   window.location.reload();
-        // }, 2000);
       }
     } catch (error) {
       console.error('Request Error:', error);

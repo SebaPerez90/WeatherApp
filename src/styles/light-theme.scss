@@ -2551,7 +2551,7 @@ body {
             }
             &:focus {
               border-bottom: 2px solid $red-stage-500;
-              background: linear-gradient(to top, #ff990b34 , #ff990b03);
+              background: linear-gradient(to top, #ff990b34, #ff990b03);
             }
           }
           .input-email-lt {
@@ -2567,7 +2567,7 @@ body {
             }
             &:focus {
               border-bottom: 2px solid $red-stage-500;
-              background: linear-gradient(to top, #ff990b34 , #ff990b03);
+              background: linear-gradient(to top, #ff990b34, #ff990b03);
             }
           }
           .msj-info {
@@ -2579,7 +2579,7 @@ body {
             width: 100%;
             color: $light;
             text-shadow: 1px 2px 1px #13131356;
-            background: linear-gradient(to top, #ff636365 , #ff990b03);
+            background: linear-gradient(to top, #ff636365, #ff990b03);
             border-bottom: 2px solid #ff63638f;
           }
           .text-area-lt {
@@ -2598,7 +2598,7 @@ body {
             &:focus {
               border-radius: 0.3em;
               border-bottom: 2px solid $red-stage-500;
-              background: linear-gradient(to top, #ff990b34 , #ff990b03);
+              background: linear-gradient(to top, #ff990b34, #ff990b03);
             }
           }
           .send-btn-lt {
@@ -2832,6 +2832,59 @@ body {
                 font-weight: 900;
               }
             }
+          }
+        }
+      }
+
+      #issues-container-lt {
+        border: 1px solid #00000025;
+        border-top: none;
+        padding: 1em;
+
+        h1 {
+          text-align: center;
+          font-size: 1.6em;
+          font-weight: bolder;
+        }
+        > :nth-child(2) {
+          margin-top: 1em;
+          padding: 2em;
+          background-color: $light;
+          border-radius: 0.5em;
+          border: 1px solid #00000025;
+          p {
+            font-family: $roboto-italic;
+            margin-top: 1.5em;
+            text-wrap: pretty;
+            font-size: 0.9em;
+          }
+
+          > :first-child {
+            margin-top: 0;
+          }
+        }
+      }
+      ///////////////////////        MEDIA QUERYS     ////////////////////////////
+      @media (width <= 450px) {
+        #issues-container-lt {
+          h1 {
+            text-align: start;
+          }
+          > :nth-child(2) {
+            margin-top: 2em;
+            border: none;
+            padding: 0em;
+            background-color: transparent;
+            p {
+              width: 100%;
+            }
+          }
+        }
+      }
+      @media (width <= 350px) {
+        #issues-container-lt {
+          h1 {
+            font-size: 1.2em;
           }
         }
       }

@@ -61,6 +61,11 @@ const Readme = () => {
               <p id='index'>{languageEng ? 'Index of content :' : 'Indice de contenido :'}</p>
               <ul>
                 <li>
+                  <a href={themeDark ? '#issues-container-dt' : '#issues-container-lt'}>
+                    {languageEng ? 'Issues' : 'Asuntos/Pendientes'}
+                  </a>
+                </li>
+                <li>
                   <a href={themeDark ? '#overview-container-dt' : '#overview-container-lt'}>
                     {languageEng ? 'Overview' : 'Descripción general'}
                   </a>
@@ -96,6 +101,32 @@ const Readme = () => {
                   </a>
                 </li>
               </ul>
+            </section>
+
+            <section id={themeDark ? 'issues-container-dt' : 'issues-container-lt'}>
+              <h1>{languageEng ? '⚠️Issues' : '⚠️Asuntos/Pendientes'}</h1>
+              <div>
+                <p>
+                  {languageEng
+                    ? 'During the development of this project, I faced challenges related to routing due to the lack of backend support. Developing the application entirely on the frontend made routing complicated when attempting to access different sections of the application via the URL. However, navigation within the user interface posed no issues.'
+                    : 'Durante el desarrollo de este proyecto, enfrenté desafíos relacionados con el enrutamiento debido a la falta de soporte de backend. Al desarrollar la aplicación completamente en el frontend, el enrutamiento se volvió complicado al intentar acceder a diferentes secciones de la aplicación a través de la URL. Sin embargo, la navegación dentro de la interfaz de usuario no presentaba problemas.'}
+                </p>
+                <p>
+                  {languageEng
+                    ? 'In the development stage, the application worked correctly, but problems arose when deploying it to production as I had not adequately considered routing management. Although I considered that the solution could be implementing more robust routing, such as server-side routing, I opted for a quicker solution to maintain focus on the core functionality of the application.'
+                    : 'En la etapa de desarrollo, la aplicación funcionaba correctamente, pero problemas surgieron al llevarla a producción ya que no había contemplado adecuadamente el manejo del enrutamiento. Aunque consideré que la solución podría ser implementar un enrutamiento más robusto, como el enrutamiento del lado del servidor, opté por una solución más rápida para mantener el enfoque en la funcionalidad principal de la aplicación.'}
+                </p>
+                <p>
+                  {languageEng
+                    ? 'I implemented the solution of using hash-based routing, which initially resolved the routing problem. However, this solution introduced new problems, especially in the README section. Here, navigation within the section became problematic as clicking on index content links caused the URL to change, making it difficult to find the new route.'
+                    : 'Implementé la solución de utilizar hash-based routing, que inicialmente resolvió el problema de enrutamiento. Sin embargo, esta solución introdujo nuevos problemas, especialmente en la sección README. Aquí, la navegación dentro de la sección se volvió problemática ya que al hacer clic en los enlaces del índice de contenido, la URL cambiaba y dificultaba encontrar la nueva ruta.'}
+                </p>
+                <p>
+                  {languageEng
+                    ? 'In conclusion, although the hash-based routing solution provided a temporary fix for the initial routing problem, it highlighted the need to properly address routing in future iterations of the application. More robust and scalable routing management options will be considered in the future to ensure a seamless and hassle-free user experience.'
+                    : 'En conclusión, aunque la solución de hash-based routing proporcionó una solución temporal para el problema inicial de enrutamiento, destacó la necesidad de abordar adecuadamente el enrutamiento en futuras iteraciones de la aplicación. Se considerarán opciones más robustas y escalables para el manejo del enrutamiento en el futuro, garantizando una experiencia de usuario fluida y sin problemas.'}
+                </p>
+              </div>
             </section>
 
             <section id={themeDark ? 'overview-container-dt' : 'overview-container-lt'}>

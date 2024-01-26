@@ -2787,6 +2787,57 @@ body {
         }
       }
 
+      #issues-container-dt {
+        border: 1px solid #ffffff28;
+        border-top: none;
+        padding: 2em 1em;
+        h1 {
+          text-align: center;
+          font-size: 1.6em;
+          font-weight: bolder;
+        }
+        >:nth-child(2) {
+          margin-top: 1em;
+          padding: 2em;
+          background-color: $woodsmoke-800;
+          border-radius: 0.5em;
+          p {
+            font-family: $roboto-italic;
+            margin-top: 1.5em;
+            text-wrap: pretty;
+            font-size: 0.9em;
+          }
+
+          >:first-child {
+           margin-top: 0; 
+          }
+        }
+      }
+      ///////////////////////        MEDIA QUERYS     ////////////////////////////
+      @media (width <= 450px) {
+        #issues-container-dt {
+          h1 {
+            text-align: start;
+          }
+          > :nth-child(2) {
+            margin-top: 2em;
+            border: none;
+            padding: 0em;
+            background-color: transparent;
+            p {
+              width: 100%;
+            }
+          }
+        }
+      }
+      @media (width <= 350px) {
+        #issues-container-dt {
+          h1 {
+            font-size: 1.2em;
+          }
+        }
+      }
+
       #features-container-dt {
         border: 1px solid #ffffff28;
         border-top: none;
